@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum Gothic Coding');
+
+* {                                             /* font */
+    font-family: Nanum Gothic Coding;
+}
+
+body {                                          /* สีพื้นหลัง */
+    background-color: #e9d5ae;
+}
+
+#TEXT {                                         /* ข้อความ "LOCATION" */
+    text-align: center;
+    font-size: 300%;
+}
+
+#UNDER_TITLE {                                  /* ข้อความ "< TODAY >" */
+    text-align: center;
+    font-size: 200%;
+}
