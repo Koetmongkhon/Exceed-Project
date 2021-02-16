@@ -17,3 +17,26 @@ body {                                          /* สีพื้นหลั�
     text-align: center;
     font-size: 200%;
 }
+
+.BUTTON {                                       /* ทำปุ่ม SELECT_LOCA , YESTERDAY ให้เป็นแนวนอน */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#BUTTON_S {                                     /* ปุ่ม SELECT_LOCA */
+    margin-top: 450px;
+    margin-right: 350px;
+}
+#BUTTON_Y {                                     /* ปุ่ม YESTERDAY */
+    margin-top: 450px;
+    margin-left: 350px;
+}
+.BUTTON_UNDER {                                /* ขนาด + สีปุ่ม */
+    background-color: #dbdada;
+    font-size: 150%;
+    border-radius: 5px;
+}
+.BUTTON_UNDER:hover {                          /* สีปุ่มขณะเม้าส์ชี้ */
+    background-color: #e3ab9b;
+    color: #ffffff;
+}

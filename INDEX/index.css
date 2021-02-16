@@ -36,6 +36,7 @@ body {                                          /* สีพื้นหลั�
 #BUTTON_SUBMIT {                                /* ข้อความ "SUBMIT" */
     background-color: #dbdada;
     font-size: 85%;
+    border-radius: 5px;
 }
 #BUTTON_SUBMIT:hover {                          /* ข้อความ "SUBMIT" ขณะเม้าส์ชี้ */
     background-color: #e3ab9b;
