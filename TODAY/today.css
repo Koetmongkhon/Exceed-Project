@@ -18,17 +18,80 @@ body {                                          /* สีพื้นหลั�
     font-size: 200%;
 }
 
+
+.G_AND_B {                                      /* จัดให้แนวนอน */
+    display: flex;
+    flex-direction: row;
+}
+
+
+.B {                                            /* จัดให้แนวตั้ง */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#chartContainer {                               /* ตำแหน่งกราฟ */
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+
+.REAL_TIME_BLOCKS {                             /* ตำแหน่ง blocks */
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 50px 0px 0px 100px;
+    font-size: 200%;
+    text-align: center;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+
+
+.COLOR_HINT {                                   /* เรียง 3 สีให้เป็นแนวนอน */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.CIRCLE {                                       /* สร้างวงกลม */
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+                                                /* สีวงกลม */
+#C1 {
+    background-color: #51e972;
+}
+#C2 {
+    background-color: #f68b39;
+}
+#C3 {
+    background-color: #f62f2f;
+}
+
+.COLOR_AND_TEXT{                                /* สี + text ขยายความ ให้เเป็นแนวนอน */
+    display: flex;
+    flex-direction: row;
+    font-size: 150%;
+}
+
+
 .BUTTON {                                       /* ทำปุ่ม SELECT_LOCA , YESTERDAY ให้เป็นแนวนอน */
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 #BUTTON_S {                                     /* ปุ่ม SELECT_LOCA */
-    margin-top: 450px;
+    margin-top: 60px;
     margin-right: 350px;
 }
 #BUTTON_Y {                                     /* ปุ่ม YESTERDAY */
-    margin-top: 450px;
+    margin-top: 60px;
     margin-left: 350px;
 }
 .BUTTON_UNDER {                                /* ขนาด + สีปุ่ม */
