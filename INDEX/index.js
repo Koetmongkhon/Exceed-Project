@@ -1,6 +1,5 @@
 // https://exceed15.cpsk-club.xyz
 
-
 // ส่ง location ให้ back
 function scream(lacation) {
     fetch("https://backend.cpsk-club.xyz/twitter", {
@@ -22,10 +21,14 @@ form.addEventListener("submit",(event)=>{              // กด submit ทำ e
     // sel = select , loc = location
 
     if(loc==="LOCATION A") {
-        location.href = "../TODAY/today_a.html";
+        var location_name = "A";
+        sessionStorage.setItem("location_name", location_name);
+        location.href = "../TODAY/today.html";
     }
     else if(loc==="LOCATION B") {
-        location.href = "../TODAY/today_b.html";
+        var location_name = "B";
+        sessionStorage.setItem("location_name", location_name);
+        location.href = "../TODAY/today.html";
     }
 });
 
