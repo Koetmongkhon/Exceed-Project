@@ -6,7 +6,7 @@ let checkQuantity2 = 50;
 // เปลี่ยนสี blocks
 function test(block,checkQuantity,checkBlock){
     if ( (checkQuantity<=10 && checkBlock===1 ) || (checkQuantity<=49 && checkBlock===2) ) {
-        block.style.backgroundColor = "#51e972";
+        block.style.backgroundColor = "#4dd77f";
     }
     else if ((checkQuantity<=36 && checkBlock===1 ) || (checkQuantity<=100 && checkBlock===2)) {
         block.style.backgroundColor = "#f68b39";

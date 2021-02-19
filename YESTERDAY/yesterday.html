@@ -13,60 +13,69 @@
         <!-- ----------------------------------------------------------------------------------------------------------- Pie Chart -->
 
 
+        <div class="graph">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
 
-        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Category', 'Numbers', { role: 'style' }],
+            ['A', 11, '#5382bc'],
+            ['B', 2, '#5382bc'],
+            ['C', 2, '#5382bc']
+            ]);
 
-        var data = google.visualization.arrayToDataTable([
-          ['Category', 'Percentage'],
-          ['A', 11],
-          ['B', 2],
-          ['C', 2]
-        ]);
+            var options = {
+            legend: { position: 'bottom', textStyle: {fontSize: 16}, },
+            backgroundColor: "#faf3e3",
+            title: 'Bar Chart',
+            fontSize: 30,
+            fontFamily: "Nanum Gothic Coding",
+            colors: ['#5382bc']
+            };
 
-        var options = {
-          title: 'Percentage'
-        };
+            var chart = new google.visualization.BarChart(document.getElementById('barchart'));
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+            }
+            </script>
+            <div id="barchart" style="width: 1000px; height: 350px;"></div>
 
-        chart.draw(data, options);
-        }
-        </script>
-        <div id="piechart" style="width: 900px; height: 500px;"></div>
-        
 <!-- ----------------------------------------------------------------------------------------------------------------- Bar Chart -->
 
-        <p>Blank Space</p>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
 
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
 
-        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Category', 'Percentage'],
+            ['PASS', 11],
+            ['NOT PASS', 2]
+            ]);
 
-        var data = google.visualization.arrayToDataTable([
-        ['Category', 'Numbers'],
-        ['A', 11],
-        ['B', 2],
-        ['C', 2]
-        ]);
+            var options = {
+            // pieSliceBorderColor: '#000',
+            legend: { position: 'bottom', textStyle: {fontSize: 25}, },
+            backgroundColor: "#e9d5ae",
+            title: 'Percentage',
+            fontSize: 30,
+            fontName: 'Nanum Gothic Coding',
+            slices: [{color: '#4dd77f',offset:0},{color: '#f62f2f',offset:0.1}]
+            };
 
-        var options = {
-        title: 'Bar Chart'
-        };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-        var chart = new google.visualization.BarChart(document.getElementById('barchart'));
-
-        chart.draw(data, options);
-        }
-        </script>
-        <div id="barchart" style="width: 900px; height: 500px;"></div>
+            chart.draw(data, options);
+            }
+            </script>
+            <div id="piechart" style="width: 700px; height: 450px;"></div>
+        </div>
 
 <!-- ----------------------------------------------------------------------------------------------------------------- -->
 

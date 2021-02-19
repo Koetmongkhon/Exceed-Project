@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum Gothic Coding');
-
+@import url('https://fonts.googleapis.com/css2?family=Julius Sans One');
+@import url('https://fonts.googleapis.com/css2?family=Palanquin');
 * {                                             /* font */
     font-family: Nanum Gothic Coding;
 }
@@ -87,11 +88,11 @@ body {                                          /* สีพื้นหลั�
     justify-content: center;
 }
 #BUTTON_S {                                     /* ปุ่ม SELECT_LOCA */
-    margin-top: 60px;
+    margin-top: 66px;
     margin-right: 350px;
 }
 #BUTTON_Y {                                     /* ปุ่ม YESTERDAY */
-    margin-top: 60px;
+    margin-top: 66px;
     margin-left: 350px;
 }
 .BUTTON_UNDER {                                /* ขนาด + สีปุ่ม */
