@@ -10,6 +10,67 @@
         <h1 id="TEXT"> LOCATION <p style="display:inline;" id="location_name"></p> </h1>                      <!-- ข้อความ LOCATION -->
         <p id="UNDER_TITLE"> < YESTERDAY > </p>                     <!-- ข้อความ < YESTERDAY > -->
 
+        <!-- ----------------------------------------------------------------------------------------------------------- Pie Chart -->
+
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Category', 'Percentage'],
+          ['A', 11],
+          ['B', 2],
+          ['C', 2]
+        ]);
+
+        var options = {
+          title: 'Percentage'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+        }
+        </script>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        
+<!-- ----------------------------------------------------------------------------------------------------------------- Bar Chart -->
+
+        <p>Blank Space</p>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+        ['Category', 'Numbers'],
+        ['A', 11],
+        ['B', 2],
+        ['C', 2]
+        ]);
+
+        var options = {
+        title: 'Bar Chart'
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('barchart'));
+
+        chart.draw(data, options);
+        }
+        </script>
+        <div id="barchart" style="width: 900px; height: 500px;"></div>
+
+<!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+
         <div class="BUTTON">                                        <!-- ปุ่ม SELECT_LOCA , TODAY -->
             <div id="BUTTON_S">                                     <!-- ปุ่ม SELECT_LOCA -->
                 <a href="../INDEX/index.html">
