@@ -32,8 +32,14 @@ form.addEventListener("submit",(event)=>{              // กด submit ทำ e
     }
 });
 
+function makeNewNode(text) {
+    newNode = document.createElement("p");
+    newNode.innerText = text;
+    return newNode;
+  }
 
 // ดึง real-time data
+test_bar = document.getElementById("test-bar")
 setInterval (() => {
     fetch("https://exceed15.cpsk-club.xyz", {
         method: "GET",
@@ -44,8 +50,8 @@ setInterval (() => {
             datas.forEach(element => {
                 amount = element.people
                 real_time = element.real_time
-                dens = element.density
-                unit = element.unit
+                // dens = element.density
+                bar.appendChild(makeNewNode(element.density))
 
                 // call line graph and status
             });
