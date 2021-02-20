@@ -24,11 +24,11 @@ body {                                          /* สีพื้นหลั�
     justify-content: center;
 }
 #BUTTON_S {                                     /* ปุ่ม SELECT_LOCA */
-    margin-top: 450px;
+    margin-top: 30px;
     margin-right: 350px;
 }
 #BUTTON_T {                                     /* ปุ่ม TODAY */
-    margin-top: 450px;
+    margin-top: 30px;
     margin-left: 350px;
 }
 .BUTTON_UNDER {                                /* ขนาด + สีปุ่ม */
@@ -39,4 +39,21 @@ body {                                          /* สีพื้นหลั�
 .BUTTON_UNDER:hover {                          /* สีปุ่มขณะเม้าส์ชี้ */
     background-color: #e3ab9b;
     color: #ffffff;
+}
+
+#barchart {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#piechart {
+    margin-top: 10px;
+    /*margin-left: 50px;*/
+    font-size: 200%;
+}
+
+.graph {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
