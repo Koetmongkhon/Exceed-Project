@@ -12,7 +12,7 @@ function scream(lacation) {
       .catch((error) => console.log("error", error));
 }
 
-let form= document.getElementById("location_input");            // from = id(location_input)
+let form = document.getElementById("location_input");            // from = id(location_input)
 
 form.addEventListener("submit",(event)=>{              // กด submit ทำ event
     event.preventDefault();
@@ -41,57 +41,64 @@ function makeNewNode(text) {
 // ดึง real-time data
 test_bar = document.getElementById("test-bar")
 setInterval (() => {
-    fetch("https://exceed15.cpsk-club.xyz", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((data = data.json())
-        .then ((datas) => {
-            datas.forEach(element => {
-                amount = element.people
-                real_time = element.real_time
-                // dens = element.density
-                bar.appendChild(makeNewNode(element.density))
-
+    fetch("http://158.108.182.17:2255/get_dens_A")
+    // fetch("test.json")
+        .then((response) => response.json())
+        // .then((datas) => appendData(datas))
+        .then((data) => {
+        //     datas.forEach(data => {
+                people = data.people
+                // real_time = element.real_time
+                dens = data.density
+                // test_bar.appendChild(makeNewNode(data.people))
+                // console.log(test_bar)
                 // call line graph and status
-            });
-        }));
-}, 5000);
+            })
+        .catch((error) => console.log("error", error));
+},10000);
+
+// function appendData(datas){
+//     var div = document.getElementById("test-bar")
+//     for(var i = 0; i<datas.length;i++)
+//         var div = document.createElement("div")
+//         div.innerHTML = `dens = ${datas.density}`
+//         test_bar.appendChild(div)
+    // }
 
 // ดึงข้อมูลของ bar graph
-function getBarData()
-{
-    fetch("https://exceed15.cpsk-club.xyz", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      })
-      .then((data) => data.json())
-      .then((datas) => {
-        datas.forEach((each) => {
-            in_avg = each.in_avg
-            out_avg = each.out_avg
-            time_range = each.time_range
-            // call bar graph function
-        });
-    })
-}
+// function getBarData()
+// {
+//     fetch("https://exceed15.cpsk-club.xyz", {
+//         method: "GET",
+//         headers: { "Content-Type": "application/json" },
+//       })
+//       .then((data) => data.json())
+//       .then((datas) => {
+//         datas.forEach((each) => {
+//             in_avg = each.in_avg
+//             out_avg = each.out_avg
+//             time_range = each.time_range
+//             // call bar graph function
+//         });
+//     })
+// }
 
-// ดึง ข้อมูลของ piechart
-function getPieData()
-{
-    fetch("https://exceed15.cpsk-club.xyz", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      })
-      .then((data) => data.json())
-      .then((datas) => {
-        datas.forEach((each) => {
-            amount = each.pass
-            real_time = each.not_pass
-            // call pie chart function
-        });
-    })
-}
+// // ดึง ข้อมูลของ piechart
+// function getPieData()
+// {
+//     fetch("https://exceed15.cpsk-club.xyz", {
+//         method: "GET",
+//         headers: { "Content-Type": "application/json" },
+//       })
+//       .then((data) => data.json())
+//       .then((datas) => {
+//         datas.forEach((each) => {
+//             amount = each.pass
+//             real_time = each.not_pass
+//             // call pie chart function
+//         });
+//     })
+// }
 
 // function getLineData()
 // {
