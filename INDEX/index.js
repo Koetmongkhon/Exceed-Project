@@ -41,14 +41,6 @@ setInterval (() => {
         .catch((error) => console.log("error", error));
 },5000);
 
-// function appendData(datas){
-//     var div = document.getElementById("test-bar")
-//     for(var i = 0; i<datas.length;i++)
-//         var div = document.createElement("div")
-//         div.innerHTML = `dens = ${datas.density}`
-//         test_bar.appendChild(div)
-    // }
-
 // ดึงข้อมูลของ bar graph
 // function getBarData()
 // {
@@ -67,22 +59,21 @@ setInterval (() => {
 //     })
 // }
 
-// // ดึง ข้อมูลของ piechart
-// function getPieData()
-// {
-//     fetch("https://exceed15.cpsk-club.xyz", {
-//         method: "GET",
-//         headers: { "Content-Type": "application/json" },
-//       })
-//       .then((data) => data.json())
-//       .then((datas) => {
-//         datas.forEach((each) => {
-//             amount = each.pass
-//             real_time = each.not_pass
-//             // call pie chart function
-//         });
-//     })
-// }
+// ดึง ข้อมูลของ piechart
+function getPieData()
+{
+    fetch("http://158.108.182.17:2255/get_temp_A", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => response.json())
+      .then((data) => {
+            pass = data.pass
+            not_pass = data.not_pass
+            test_bar.appendChild(makeNewNode(pass+" "+not_pass))
+            // call pie chart function
+      });
+}
 
 // function getLineData()
 // {
