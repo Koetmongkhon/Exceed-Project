@@ -56,8 +56,8 @@ function getBarData()
       .then((response) => response.json())
       .then((data) => {
           for (var i = 10; i <= 21; i++) {
-            in_avg = data[i].in
-            // out_avg = each.out_avg
+            in_yes = data[i].in
+            out_yes = data[i].out
             // time_range = each.time_range
             // call bar graph function
           }
