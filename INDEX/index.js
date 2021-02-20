@@ -1,17 +1,5 @@
 // https://exceed15.cpsk-club.xyz
 
-// ส่ง location ให้ back
-function scream(lacation) {
-    fetch("https://backend.cpsk-club.xyz/twitter", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ location: location }),
-    })
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-}
-
 let form = document.getElementById("location_input");            // from = id(location_input)
 
 form.addEventListener("submit",(event)=>{              // กด submit ทำ event
@@ -42,20 +30,16 @@ function makeNewNode(text) {
 test_bar = document.getElementById("test-bar")
 setInterval (() => {
     fetch("http://158.108.182.17:2255/get_dens_A")
-    // fetch("test.json")
         .then((response) => response.json())
-        // .then((datas) => appendData(datas))
         .then((data) => {
         //     datas.forEach(data => {
                 people = data.people
-                // real_time = element.real_time
+                hr = data.hour
+                min = data.minute
                 dens = data.density
-                // test_bar.appendChild(makeNewNode(data.people))
-                // console.log(test_bar)
-                // call line graph and status
             })
         .catch((error) => console.log("error", error));
-},10000);
+},5000);
 
 // function appendData(datas){
 //     var div = document.getElementById("test-bar")
