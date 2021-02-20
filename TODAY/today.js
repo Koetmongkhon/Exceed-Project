@@ -1,7 +1,37 @@
+// ลิ้ง location
+let ln =document.getElementById("location_name");
+var location_name = sessionStorage.getItem("location_name");
+ln.innerText = location_name;
+
+
 let block1 = document.getElementById("BLOCKS_DENSITY_M2");
 let block2 = document.getElementById("BLOCKS_DENSITY_MIN");
-let checkQuantity1 = 100;
-let checkQuantity2 = 50;
+
+
+setInterval (() => {
+    if (location_name==="A"){
+        fetch("http://158.108.182.17:2255/get_dens_A")
+        .then((response) => response.json())
+        .then((data) => {
+                people = data.people
+                dens = data.density
+            })
+        .catch((error) => console.log("error", error));
+    }
+    else{
+        fetch("http://158.108.182.17:2255/get_dens_B")
+        .then((response) => response.json())
+        .then((data) => {
+        //     datas.forEach(data => {
+                people = data.people
+                dens = data.density
+            })
+        .catch((error) => console.log("error", error));
+    }
+    test(block1,dens,1);
+    test(block2,people,2);
+},1000);
+
 
 // เปลี่ยนสี blocks
 function test(block,checkQuantity,checkBlock){
@@ -16,10 +46,5 @@ function test(block,checkQuantity,checkBlock){
     }
 }
 
-test(block1,checkQuantity1,1);
-test(block2,checkQuantity2,2);
-
-// ลิ้ง location
-let ln =document.getElementById("location_name");
-var location_name = sessionStorage.getItem("location_name");
-ln.innerText = location_name;
+test(block1,0,1);
+test(block2,0,2);
