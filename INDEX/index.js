@@ -12,11 +12,17 @@ form.addEventListener("submit",(event)=>{              // กด submit ทำ e
         var location_name = "A";
         sessionStorage.setItem("location_name", location_name);
         location.href = "../TODAY/today.html";
+        dens_url = "http://158.108.182.17:2255/get_dens_A"
+        bar_url = "http://158.108.182.17:2255/get_time_A_yesterday"
+        pie_url = "http://158.108.182.17:2255/get_temp_A"
     }
     else if(loc==="LOCATION B") {
         var location_name = "B";
         sessionStorage.setItem("location_name", location_name);
         location.href = "../TODAY/today.html";
+        dens_url = "http://158.108.182.17:2255/get_dens_B"
+        bar_url = "http://158.108.182.17:2255/get_time_B_yesterday"
+        pie_url = "http://158.108.182.17:2255/get_temp_B"
     }
 });
 
@@ -37,40 +43,35 @@ setInterval (() => {
                 hr = data.hour
                 min = data.minute
                 dens = data.density
+                // getBarData()
+                // test_bar.appendChild(makeNewNode(dens))
             })
         .catch((error) => console.log("error", error));
 },5000);
 
 // ดึงข้อมูลของ bar graph
-// function getBarData()
-// {
-//     fetch("https://exceed15.cpsk-club.xyz", {
-//         method: "GET",
-//         headers: { "Content-Type": "application/json" },
-//       })
-//       .then((data) => data.json())
-//       .then((datas) => {
-//         datas.forEach((each) => {
-//             in_avg = each.in_avg
-//             out_avg = each.out_avg
-//             time_range = each.time_range
-//             // call bar graph function
-//         });
-//     })
-// }
+function getBarData()
+{
+    fetch("http://158.108.182.17:2255/get_time_A_yesterday")
+      .then((response) => response.json())
+      .then((data) => {
+          for (var i = 10; i <= 21; i++) {
+            in_avg = data[i].in
+            // out_avg = each.out_avg
+            // time_range = each.time_range
+            // call bar graph function
+          }
+        });
+}
 
 // ดึง ข้อมูลของ piechart
 function getPieData()
 {
-    fetch("http://158.108.182.17:2255/get_temp_A", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      })
+    fetch("http://158.108.182.17:2255/get_temp_A")
       .then((response) => response.json())
       .then((data) => {
-            pass = data.pass
-            not_pass = data.not_pass
-            test_bar.appendChild(makeNewNode(pass+" "+not_pass))
+            pass = data.pass_yesterday
+            not_pass = data.not_pass_yesterday
             // call pie chart function
       });
 }
